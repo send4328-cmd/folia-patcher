@@ -1,0 +1,257 @@
+{
+ "id": "lyric-styles-plus",
+ "name": "莫奈 / 回环 / 时计增强",
+ "description": "莫奈：左右镜像、封面关闭、自定义描述；回环：上下左右位置、显示翻译；时计：左右镜像。",
+ "folia": "0.7.25",
+ "files": [
+  {
+   "path": "dist/assets/VisualizerMonet-C69NUKGk.js",
+   "origSha": "2c3491f9497121b23e22ef6dbde0a1c39a820e51ea3803e4634974a98ba4fcbd",
+   "patchedSha": "f49a6912d8647ba10f7b0982ba0c0d94c4a5f4d1e6c0a49496cf910a6c1dab90",
+   "rules": [
+    {
+     "find": "fontsEpoch:l,wordColorMatchers:u,audioPower:f,onLineSeek:p,canSeek:m=!1,disableEntryMotion:h=!1,renderStaticPassed:g=!1})=>{let _=e.offset>=0?34:-34,v=e.status===`passed`||e.offset<0?-38:38,y=e.status===`active`,b=Fe(",
+     "replace": "fontsEpoch:l,wordColorMatchers:u,audioPower:f,onLineSeek:p,canSeek:m=!1,disableEntryMotion:h=!1,renderStaticPassed:g=!1,mirror:mir=!1})=>{let _=e.offset>=0?34:-34,v=e.status===`passed`||e.offset<0?-38:38,y=e.status===`active`,b=Fe("
+    },
+    {
+     "find": "s}px`,right:`${s}px`,height:e.layout.visualHeightPx,transformOrigin:`left top`,zIndex:e.tone.zIndex},children:[e.line.isChorus&&(0,H.jsx)(",
+     "replace": "s}px`,right:`${s}px`,height:e.layout.visualHeightPx,transformOrigin:mir?`right top`:`left top`,zIndex:e.tone.zIndex},children:[e.line.isChorus&&(0,H.jsx)("
+    },
+    {
+     "find": "fontSize:i,fontWeight:e.tone.fontWeight,lineHeight:`${e.layout.lineHeightPx}px`,letterSpacing:0,...b,textShadow:e.status===`active`?`0 14px 34px ${r(n.backgroundColor,.22)}",
+     "replace": "fontSize:i,fontWeight:e.tone.fontWeight,lineHeight:`${e.layout.lineHeightPx}px`,letterSpacing:0,textAlign:mir?`right`:void 0,...b,textShadow:e.status===`active`?`0 14px 34px ${r(n.backgroundColor,.22)}"
+    },
+    {
+     "find": "paddingLeft:`${s}px`,paddingRight:`${s}px`,height:e.heightPx,paddingTop:e.paddingTopPx,paddingBottom:e.paddingBottomPx,boxSizing:`border-box`,color:r(n.primaryColor,",
+     "replace": "paddingLeft:`${s}px`,paddingRight:`${s}px`,textAlign:mir?`right`:void 0,height:e.heightPx,paddingTop:e.paddingTopPx,paddingBottom:e.paddingBottomPx,boxSizing:`border-box`,color:r(n.primaryColor,"
+    },
+    {
+     "find": "emptyText:f,subtitleContentMode:p=`translation`,audioPower:h,audioBands:g,onLyricLineSeek:_,seekDisabled:v=!1,layoutScale:y=1})=>{let b=(0,B.useRef)(",
+     "replace": "emptyText:f,subtitleContentMode:p=`translation`,audioPower:h,audioBands:g,onLyricLineSeek:_,seekDisabled:v=!1,layoutScale:y=1,mirror:mr=!1})=>{let b=(0,B.useRef)("
+    },
+    {
+     "find": "F}px)`,maxWidth:`${P}px`,marginLeft:`-${M}px`,marginRight:`-${M}px`,paddingLeft:`${M}px`,paddingRight:`${M}px`,",
+     "replace": "F}px)`,maxWidth:`${P}px`,marginLeft:mr?`auto`:`-${M}px`,marginRight:`-${M}px`,width:mr?`100%`:void 0,paddingLeft:`${M}px`,paddingRight:`${M}px`,"
+    },
+    {
+     "find": "fontsEpoch:j,wordColorMatchers:le,audioPower:h,onLineSeek:J,canSeek:I,disableEntryMotion:L,renderStaticPassed:L&&e.index!==n},e.key))}):f?(",
+     "replace": "fontsEpoch:j,wordColorMatchers:le,audioPower:h,onLineSeek:J,canSeek:I,disableEntryMotion:L,renderStaticPassed:L&&e.index!==n,mirror:mr},e.key))}):f?("
+    },
+    {
+     "find": "0,B.useState)(!1),J=_.portraitOffsetX??0,Y=S(J);(0,B.useEffect)(()=>{Y.set(J)},[J,Y]);let de=C(),pe=(",
+     "replace": "0,B.useState)(!1),J=_.portraitOffsetX??0,jm=_.mirrorLayout===!0?-1:1,Y=S(J*jm);(0,B.useEffect)(()=>{Y.set(J*jm)},[J,jm,Y]);let de=C(),pe=("
+    },
+    {
+     "find": ",Pe=(1.8*$).toFixed(3),Fe=`max(12rem, calc(100% - max(0px, calc(${_.portraitStyle===`square`?`0.35135 * clamp(210px, 26vw, ${Me}px) - 3rem`:`0px`})) - ${Math.abs(Math.min(0,J))}px))`,Ie=ae?.trim()||`Monet`,Le=se?.trim()||`Monet`,Re=L.description?.trim()||L.name?.trim()||`Monet`,ze=T?T.coverUrl??(te?null:p)",
+     "replace": ",Pe=(1.8*$).toFixed(3),portraitOff=_.portraitSource===`off`,mirror=_.mirrorLayout===!0,Fe=portraitOff?`100%`:`max(12rem, calc(100% - max(0px, calc(${_.portraitStyle===`square`?`0.35135 * clamp(210px, 26vw, ${Me}px) - 3rem`:`0px`})) - ${Math.abs(Math.min(0,J))}px))`,Ie=ae?.trim()||`Monet`,Le=se?.trim()||`Monet`,Re=_.descriptionText?.trim()||L.description?.trim()||L.name?.trim()||`Monet`,ze=T?T.coverUrl??(te?null:p)"
+    },
+    {
+     "find": "children:[l&&(0,H.jsxs)(`div`,{className:`flex min-h-0 min-w-0 flex-1 flex-col justify-center px-5 py-5 sm:px-8 sm:py-6 lg:px-14 lg:py-8 2xl:px-20`,children:[(0,H.jsxs)(`div`,{className:`mb-3 space-y-1.5`,style:{maxWidth:Fe},children:[(0,H.jsx)(d.div,{initial:{opacity:0,x:-30,y:-10},animate:{opacity:1,x:0,y:0},transition:{duration:1.2,ease:[.25,1,.5,1],delay:.15},className:`truncate italic`,style:{color:r(L.primaryColor,.96),fontSize:`clamp(1rem, 1.8vw, ${Pe}rem)`,letterSpacing:0},children:Ie},`artist-${X}`),(0,H.jsx)(d.div,{initial:{scaleY:0},animate:{scaleY:1},transition:{duration:1.5,ease:[.25,1,.5,1],delay:.5},className:`h-14 w-px rounded-full`,style:{originY:0,background:`linear-gradient(180deg, ${r(L.primaryColor,.72)",
+     "replace": "children:[l&&(0,H.jsxs)(`div`,{className:`flex min-h-0 min-w-0 flex-1 flex-col justify-center px-5 py-5 sm:px-8 sm:py-6 lg:px-14 lg:py-8 2xl:px-20 ${mirror?`order-2 text-right`:``}`,children:[(0,H.jsxs)(`div`,{className:`mb-3 space-y-1.5`,style:mirror?{maxWidth:Fe,width:`100%`,marginLeft:`auto`}:{maxWidth:Fe},children:[(0,H.jsx)(d.div,{initial:{opacity:0,x:-30,y:-10},animate:{opacity:1,x:0,y:0},transition:{duration:1.2,ease:[.25,1,.5,1],delay:.15},className:`truncate italic`,style:{color:r(L.primaryColor,.96),fontSize:`clamp(1rem, 1.8vw, ${Pe}rem)`,letterSpacing:0,...(mirror?{paddingRight:`0.3em`,marginRight:`-0.3em`}:{})},children:Ie},`artist-${X}`),(0,H.jsx)(d.div,{initial:{scaleY:0},animate:{scaleY:1},transition:{duration:1.5,ease:[.25,1,.5,1],delay:.5},className:`h-14 w-px rounded-full`,style:{originY:0,marginLeft:mirror?`auto`:void 0,background:`linear-gradient(180deg, ${r(L.primaryColor,.72)"
+    },
+    {
+     "find": "ease:[.25,1,.5,1],delay:.3},style:{maxWidth:Fe},children:(0,H.jsxs)(",
+     "replace": "ease:[.25,1,.5,1],delay:.3},style:mirror?{maxWidth:Fe,width:`100%`,marginLeft:`auto`}:{maxWidth:Fe},children:(0,H.jsxs)("
+    },
+    {
+     "find": "(0,H.jsx)(d.div,{initial:{opacity:0,y:20},animate:{opacity:1,",
+     "replace": "(0,H.jsx)(d.div,{className:mirror?`w-full`:void 0,initial:{opacity:0,y:20},animate:{opacity:1,"
+    },
+    {
+     "find": "emptyText:``,subtitleContentMode:le,audioPower:s,audioBands:c,onLyricLineSeek:x,seekDisabled:g,layoutScale:$})},`rail-${X}`)",
+     "replace": "emptyText:``,subtitleContentMode:le,audioPower:s,audioBands:c,onLyricLineSeek:x,seekDisabled:g,layoutScale:$,mirror})},`rail-${X}`)"
+    },
+    {
+     "find": "`desc-${X}`)]}),l?(0,H.jsx)(d.div,{initial:{opacity:0,x:50,scale:.95,rotate:1},animate:{opacity:1,x:0,scale:1,rotate:0},transition:{duration:1.6,ease:[.25,1,.5,1],delay:.25},className:`hidden min-w-0 items-center justify-center overflow-visible px-3 pr-5 sm:pr-8 md:flex lg:justify-end lg:pr-10 xl:pr-12 select-none`,style:{flex:`0 0 clamp(220px, 28vw, ${je}px)`},children:(0,H.jsxs)(`div`,{className:`relative w-full`,style:{maxWidth:`clamp(210px, 26vw, ${Me}px)`},children:[W&&(0,H.jsx)(`div`,{className:`absolute border-2 border-dashed rounded-[2.5rem] pointer-events-none`,style:{borderColor:r(L.primaryColor,.24),left:_.portraitStyle===`square`?`calc(-35.135% - 150px)`:-150,right:0,top:-12,bottom:-12,zIndex:5},children:(0,",
+     "replace": "`desc-${X}`)]}),l&&!portraitOff?(0,H.jsx)(d.div,{initial:{opacity:0,x:50,scale:.95,rotate:1},animate:{opacity:1,x:0,scale:1,rotate:0},transition:{duration:1.6,ease:[.25,1,.5,1],delay:.25},className:`hidden min-w-0 items-center justify-center overflow-visible px-3 ${mirror?`order-1 monet-mirror-portrait md:flex`:`pr-5 sm:pr-8 md:flex lg:justify-end lg:pr-10 xl:pr-12`} select-none`,style:{flex:`0 0 clamp(220px, 28vw, ${je}px)`},children:(0,H.jsxs)(`div`,{className:`relative w-full`,style:{maxWidth:`clamp(210px, 26vw, ${Me}px)`},children:[W&&(0,H.jsx)(`div`,{className:`absolute border-2 border-dashed rounded-[2.5rem] pointer-events-none`,style:{borderColor:r(L.primaryColor,.24),...(mirror?{left:0,right:_.portraitStyle===`square`?`calc(-35.135% - 150px)`:-150}:{left:_.portraitStyle===`square`?`calc(-35.135% - 150px)`:-150,right:0}),top:-12,bottom:-12,zIndex:5},children:(0,"
+    },
+    {
+     "find": "(d.div,{drag:W?`x`:!1,dragControls:de,dragListener:!1,dragConstraints:{left:-150,right:0},dragElastic:0,dragMomentum:!1,style:{",
+     "replace": "(d.div,{drag:W?`x`:!1,dragControls:de,dragListener:!1,dragConstraints:mirror?{left:0,right:150}:{left:-150,right:0},dragElastic:0,dragMomentum:!1,style:{"
+    },
+    {
+     "find": "duration:.8,ease:`easeOut`},className:`relative`,style:{width:_.portraitStyle===`square`?`135.135%`:`100%`,marginLeft:_.portraitStyle===`square`?`-35.135%`:`0%`,willChange:`transform`,transform:`translateZ(0)`},children:[_.showPortraitDragHanger&&(0,H.jsx)(d.div,{onPointerDown:e=>{W&&(e.preventDefault(),de.start(e))},onClick:e=>{if(e.stopPropagation(),!pe.current){if(!W)G(!0);else{let e=Math.round(Y.get());U?.({..._,portraitOffsetX:e}),",
+     "replace": "duration:.8,ease:`easeOut`},className:`relative`,style:{width:_.portraitStyle===`square`?`135.135%`:`100%`,marginLeft:mirror?`0%`:(_.portraitStyle===`square`?`-35.135%`:`0%`),willChange:`transform`,transform:`translateZ(0)`},children:[_.showPortraitDragHanger&&(0,H.jsx)(d.div,{onPointerDown:e=>{W&&(e.preventDefault(),de.start(e))},onClick:e=>{if(e.stopPropagation(),!pe.current){if(!W)G(!0);else{let e=Math.round(Y.get())*jm||0;U?.({..._,portraitOffsetX:e}),"
+    }
+   ]
+  },
+  {
+   "path": "dist/assets/VisualizerCladdagh-CJiBDzIT.js",
+   "origSha": "6a5e9926d1dd69e15e4593a6af9044b7507aeb8e27af5ad99e22432372ba3292",
+   "patchedSha": "0421c257584adb2c6b634184b9fff9c0ec9be3ecb5eeb9d8f5159d1242f63ec7",
+   "rules": [
+    {
+     "find": "activeSpacingInfo:_,renderBaseIndex:v,lines:x,focusScaleRatio:te,ellipseTiltDeg:ne,textSpacingScale:C=1,letterSpacingOffset:T=0})=>{let A=p(s),M=72*c,",
+     "replace": "activeSpacingInfo:_,renderBaseIndex:v,lines:x,focusScaleRatio:te,ellipseTiltDeg:ne,textSpacingScale:C=1,letterSpacingOffset:T=0,belowMainPx:ftM=0,mainFocusRatio:ftF=.65})=>{let A=p(s),M=72*c,"
+    },
+    {
+     "find": "g-e)/.15,0,1))}G*=q;let J=G.toFixed(3);if(Number(J)===0&&Number(i.get(l)?.opacity??1)===0)continue;let le=(.22+.98*_**1.5)*(1+(te??.65)*U)*H*(u.scaleFactor??1),Y=8*(1-_)*(1-.5*U),ue=E(P*(.4+.6*_),-38,38),de=`translate3d(calc(-50% + ${O.toFixed(1)}px), calc(-50% + ${k.toFixed(1)}px), 0px) rotate(",
+     "replace": "g-e)/.15,0,1))}G*=q,ftM>0&&(G*=.88);let J=G.toFixed(3);if(Number(J)===0&&Number(i.get(l)?.opacity??1)===0)continue;let le=(.22+.98*_**1.5)*(1+(te??.65)*U)*H*(u.scaleFactor??1),Y=8*(1-_)*(1-.5*U),ftQ=ftM>0?.46*(ftM*(.22+.98*_**1.5)*(1+(ftF??.65)*U)*H+M*le)+.28*ftM*(.22+.98*_**1.5)*H:0,ue=E(P*(.4+.6*_),-38,38),de=`translate3d(calc(-50% + ${(O-Math.sin(ue*Math.PI/180)*ftQ).toFixed(1)}px), calc(-50% + ${(k+Math.cos(ue*Math.PI/180)*ftQ).toFixed(1)}px), 0px) rotate("
+    },
+    {
+     "find": "v,se,I,te,ne,x,e]),(0,H.jsx)(`div`,",
+     "replace": "v,se,I,te,ne,x,e,ftM,ftF]),(0,H.jsx)(`div`,"
+    },
+    {
+     "find": "t))})},Y=e=>{let{currentTime:t,currentLineIndex:n,lines:r,theme:o,",
+     "replace": "t))})},ftT=e=>e.translation?.trim()||e.alternateTexts?.find(e=>e.role===`translation`&&e.text?.trim())?.text.trim()||``,Y=e=>{let{currentTime:t,currentLineIndex:n,lines:r,theme:o,"
+    },
+    {
+     "find": "R,L,W,K,D.letterSpacingOffset]),X=h(J*Math.PI),fe=(0,S.useRef)",
+     "replace": "R,L,W,K,D.letterSpacingOffset]),ftLs=(0,S.useMemo)(()=>r.map(e=>{let t=ftT(e);return t?{...e,fullText:t,words:[]}:null}),[r]),X=h(J*Math.PI),fe=(0,S.useRef)"
+    },
+    {
+     "find": "0,H.jsx)(`div`,{className:`absolute inset-0 overflow-hidden pointer-events-none z-[1]`,children:D.showAxisLine&&(0,H.jsx)(`div`,{",
+     "replace": "0,H.jsx)(`div`,{className:`absolute inset-0 overflow-hidden pointer-events-none z-[1]`,style:{transform:`translate(${D.offsetX??0}%, ${-(D.offsetY??0)}%)`},children:D.showAxisLine&&(0,H.jsx)(`div`,{"
+    },
+    {
+     "find": "`div`,{style:{width:`100%`,height:`100%`,position:`relative`,zIndex:10},children:c&&W>0&&G>0&&pe.map(e=>(0,H.jsx)(le,{line:r[e],lineIndex:e,centerLineIndex:J,currentTime:t,lineOffset:X,theme:o,lyricsFontScale:_,Rx:W,Ry:G,audioPower:I,containerWidth:V.width,containerHeight:V.height,activeSpacingInfo:de,renderBaseIndex:Y,lines:r,focusScaleRatio:D.focusScaleRatio,ellipseTiltDeg:D.ellipseTiltDeg,textSpacingScale:K,letterSpacingOffset:D.letterSpacingOffset},e))})]}),c&&(0,H.jsx)(ne,{showText:c,activeLine:ie,recentCompletedLine:N,nextLines:P,theme:o,subtitleTheme:s,translationFontSize:`clamp(1.1rem, 2.2vw, 1.45rem)`,upcomingFontSize:`clamp(0.95rem, 1.8vw, 1.2rem)`,subtitleOverlayOpacity:y,subtitleOverlayBackground:b,subtitleUpcomingLyricsBlur:ee,subtitleFontScale:v,hideTranslationSubtitle:C,subtitleOverlayLayout:w})]})};",
+     "replace": "`div`,{style:{width:`100%`,height:`100%`,position:`relative`,zIndex:10,transform:`translate(${D.offsetX??0}%, ${-(D.offsetY??0)}%)`},children:c&&W>0&&G>0&&pe.flatMap(e=>{let ftLn=D.showTranslation?ftLs[e]:null,ftP={lineIndex:e,centerLineIndex:J,currentTime:t,lineOffset:X,theme:o,Rx:W,Ry:G,audioPower:I,containerWidth:V.width,containerHeight:V.height,activeSpacingInfo:de,renderBaseIndex:Y,lines:r,ellipseTiltDeg:D.ellipseTiltDeg};return[(0,H.jsx)(le,{...ftP,line:r[e],lyricsFontScale:_,focusScaleRatio:D.focusScaleRatio,textSpacingScale:K,letterSpacingOffset:D.letterSpacingOffset},e),ftLn&&(0,H.jsx)(le,{...ftP,line:ftLn,lyricsFontScale:_*.55,focusScaleRatio:D.translationScaleRatio??.65,textSpacingScale:(1+(D.translationScaleRatio??.65))/(1+l.focusScaleRatio),letterSpacingOffset:D.translationLetterSpacingOffset??0,belowMainPx:72*_,mainFocusRatio:D.focusScaleRatio},`t${e}`)].filter(Boolean)})})]}),c&&(0,H.jsx)(ne,{showText:c,activeLine:ie,recentCompletedLine:N,nextLines:P,theme:o,subtitleTheme:s,translationFontSize:`clamp(1.1rem, 2.2vw, 1.45rem)`,upcomingFontSize:`clamp(0.95rem, 1.8vw, 1.2rem)`,subtitleOverlayOpacity:y,subtitleOverlayBackground:b,subtitleUpcomingLyricsBlur:ee,subtitleFontScale:v,hideTranslationSubtitle:C||!!D.showTranslation,subtitleOverlayLayout:w})]})};"
+    }
+   ]
+  },
+  {
+   "path": "dist/assets/VisualizerPendolo-ry4xVavY.js",
+   "origSha": "60482e8ece7c36b99ed76135d9c0aeea0640ecba60ba5072e4be20106854a13e",
+   "patchedSha": "4ca55eb6a290a6b57787fa308975a7c4a9a30b3ce303b833491bb0f6892e93b8",
+   "rules": [
+    {
+     "find": "c,400),[c]),K=j.width*g.wheelCenterX,q=j.height*g.wheelCenterY,J=Math.min(j.width,j.height)*g.arcRadius,Te=Math.min(j.width,j.height)*.06,Ee=J+Te,De=K+J,Oe=Math.max(140,Math.min(j.width*.46,j.width-De-48)),ke=g.arcAngleDeg*Math.PI/180/8,Ae=re(e=>a(e.smartBeat)),Y=wn(Ae,{centerX:K,centerY:q,baseRadius:J,lyricRingRadius:Ee,viewportWidth:j.width,viewportHeight:j.height},c.accentColor||`#3B82F6`),Me=d(Se,e=>-(e-W)*ke*(180/Math.PI)),Ne=d(Me,e=>-e*.65),Pe=d(Se,e=>e*ke),Fe=(0,B.useMemo)((",
+     "replace": "c,400),[c]),K=j.width*g.wheelCenterX,fsMir=g.mirrorLayout===!0,fsK=fsMir?j.width-K:K,q=j.height*g.wheelCenterY,J=Math.min(j.width,j.height)*g.arcRadius,Te=Math.min(j.width,j.height)*.06,Ee=J+Te,De=K+J,Oe=Math.max(140,Math.min(j.width*.46,j.width-De-48)),ke=g.arcAngleDeg*Math.PI/180/8,Ae=re(e=>a(e.smartBeat)),Y=wn(Ae,{centerX:fsK,centerY:q,baseRadius:J,lyricRingRadius:Ee,viewportWidth:j.width,viewportHeight:j.height},c.accentColor||`#3B82F6`),Me=d(Se,e=>-(e-W)*ke*(180/Math.PI)),Ne=d(Me,e=>-e*.65),Pe=d(Se,e=>e*ke*(fsMir?-1:1)),Fe=(0,B.useMemo)(("
+    },
+    {
+     "find": "??t,[Ve,He]),We=dn({centerX:K,centerY:q,baseRadius:J,lyricRingRadius:0,viewportWidth:j.width,viewportHeight:j.height})",
+     "replace": "??t,[Ve,He]),We=dn({centerX:fsK,centerY:q,baseRadius:J,lyricRingRadius:0,viewportWidth:j.width,viewportHeight:j.height})"
+    },
+    {
+     "find": "} 100%)`},[Y.color]),Ke=K+J*.2,qe=q-J*.75,Je=[Y.waveRadius,Y.waveBand,Y.waveStrength,Y.waveX,Y.waveY],Ye=d(Je,([e,t,n,r,i])=>je(Ke-K-r,qe-q-i,e,t,n).x),Xe=d(Je,([e,t,n,r,i])=>je(Ke-K-r,qe-q-i,e,t,n).y);return(0,$.jsx)(z,{theme:c,audioPower:f,audioBands:l,sharedProps:e,children:(0,$.jsxs)(`div`,{ref:M,className:`relative w-full h-full overflow-hidden select-none pointer-events-none`,children:[Ae&&(0,$.jsx)(u.div,{\"aria-hidden\":!0,className:`absolute pointer-events-none`,style:{left:K-We,top:q-We,width:We*2,height:We*2,zIndex:0,background:Ge,mixBlendMode:`plus-lighter`,willChange:`transform`,x:Y.haloX,y:Y.haloY,scale:Y.haloScale,opacity:Y.haloOpacity}}),(0,$.jsxs)(u.div,{className:`absolute inset-0 pointer-events-none`,style:{x:Y.shakeX,y:Y.shakeY,scale:Y.breath,transformOrigin:`${K}px ${q}px`},children:[(0,$.jsx)(Bt,{centerX:K,centerY:q,viewportWidth:j.width,viewportHeight:j.height,baseRadius:J,lyricRingRadius:Ee,escapementAngleMotionValue:Pe,",
+     "replace": "} 100%)`},[Y.color]),Ke=fsK+(fsMir?-1:1)*J*.2,qe=q-J*.75,Je=[Y.waveRadius,Y.waveBand,Y.waveStrength,Y.waveX,Y.waveY],Ye=d(Je,([e,t,n,r,i])=>je(Ke-fsK-r,qe-q-i,e,t,n).x),Xe=d(Je,([e,t,n,r,i])=>je(Ke-fsK-r,qe-q-i,e,t,n).y);return(0,$.jsx)(z,{theme:c,audioPower:f,audioBands:l,sharedProps:e,children:(0,$.jsxs)(`div`,{ref:M,className:`relative w-full h-full overflow-hidden select-none pointer-events-none`,children:[Ae&&(0,$.jsx)(u.div,{\"aria-hidden\":!0,className:`absolute pointer-events-none`,style:{left:fsK-We,top:q-We,width:We*2,height:We*2,zIndex:0,background:Ge,mixBlendMode:`plus-lighter`,willChange:`transform`,x:Y.haloX,y:Y.haloY,scale:Y.haloScale,opacity:Y.haloOpacity}}),(0,$.jsxs)(u.div,{className:`absolute inset-0 pointer-events-none`,style:{x:Y.shakeX,y:Y.shakeY,scale:Y.breath,transformOrigin:`${fsK}px ${q}px`},children:[(0,$.jsx)(Bt,{centerX:fsK,centerY:q,viewportWidth:j.width,viewportHeight:j.height,baseRadius:J,lyricRingRadius:Ee,escapementAngleMotionValue:Pe,"
+    },
+    {
+     "find": "rotate:Me,transformOrigin:`${K}px ${q}px`,WebkitTransform:`translateZ(0)`},children:Re.map(e=>{let t=e.isActive,a=F!==null&&e.line.isChorus,o=an(",
+     "replace": "rotate:Me,transformOrigin:`${K}px ${q}px`,...(fsMir?{x:j.width-2*K,scaleX:-1}:{WebkitTransform:`translateZ(0)`})},children:Re.map(e=>{let t=e.isActive,a=F!==null&&e.line.isChorus,o=an("
+    },
+    {
+     "find": "(0,$.jsxs)(`div`,{style:{transform:`translateY(-50%)`},children:[a&&(0,$.jsx)(`span`,{\"aria-hidden\":!0,className:`absolute pointer-events-none rounded-full`,style:{width:`0.42em`,height:`0.42em`,left:`-0.95em`,top:`0.52em`,backgroundColor:X,boxShadow:`0 0 7px ${r(X,.58)",
+     "replace": "(0,$.jsxs)(`div`,{\"data-fs-mirror\":fsMir?``:void 0,style:fsMir?{transform:`translateY(-50%) scaleX(-1)`,textAlign:`right`}:{transform:`translateY(-50%)`},children:[a&&(0,$.jsx)(`span`,{\"aria-hidden\":!0,className:`absolute pointer-events-none rounded-full`,style:{width:`0.42em`,height:`0.42em`,...(fsMir?{right:`-0.95em`}:{left:`-0.95em`}),top:`0.52em`,backgroundColor:X,boxShadow:`0 0 7px ${r(X,.58)"
+    }
+   ]
+  },
+  {
+   "path": "dist/assets/noLyricLines-B4frfRLt.js",
+   "origSha": "d9a34de084ffb7c2f69fb86c7845315dd7c66133ee86cf8d289736f6774b344f",
+   "patchedSha": "11e82e054c565ca9ef5633bae2f2d962b49955b0c0d3dc6ca39ca947a5b90d96",
+   "rules": [
+    {
+     "find": ",A={focusScaleRatio:.65,radiusScale:1,ellipseTiltDeg:45,showAxisLine:!0,letterSpacingOffset:0},he={showEmoMessages:!0,emojiPackSource:`builtin`,avatarSource:`cover`},j={splitProbability:.75,tiltStyleProbability:.35,colorScheme:`default`},ge={arcRadius:.42,arcAngleDeg:100,wheelCenterX:0,wheelCenterY:.5,tickSnappiness:2,activeScale:1.25,showGearDecor:`subtle`,showCenterGradient:!0,showCoverOnWatchFace:!1,enableLineGlow:!1},_e={cameraIntensity:1,typographyMotion:1,mgDensity:1,showOnlyText:!1,",
+     "replace": ",A={focusScaleRatio:.65,radiusScale:1,ellipseTiltDeg:45,showAxisLine:!0,letterSpacingOffset:0,offsetX:0,offsetY:0,showTranslation:!1,translationScaleRatio:.65,translationLetterSpacingOffset:0},he={showEmoMessages:!0,emojiPackSource:`builtin`,avatarSource:`cover`},j={splitProbability:.75,tiltStyleProbability:.35,colorScheme:`default`},ge={arcRadius:.42,arcAngleDeg:100,wheelCenterX:0,wheelCenterY:.5,tickSnappiness:2,activeScale:1.25,showGearDecor:`subtle`,showCenterGradient:!0,showCoverOnWatchFace:!1,enableLineGlow:!1,mirrorLayout:!1},_e={cameraIntensity:1,typographyMotion:1,mgDensity:1,showOnlyText:!1,"
+    },
+    {
+     "find": "showAudioVisualization:!0,audioStyle:`bar`,fontScale:1.2,portraitSource:`cover`,portraitOffsetX:0,portraitStyle:`square`,showPortraitDragHanger:!0},F=function(e){return e.IDLE=`IDLE`,e.PLAYING=`PLAYING`,",
+     "replace": "showAudioVisualization:!0,audioStyle:`bar`,fontScale:1.2,portraitSource:`cover`,portraitOffsetX:0,portraitStyle:`square`,showPortraitDragHanger:!0,mirrorLayout:!1,descriptionText:``},F=function(e){return e.IDLE=`IDLE`,e.PLAYING=`PLAYING`,"
+    },
+    {
+     "find": "tiltColorSchemePrimaryAll:`Single 2`,claddaghSettings:`Claddagh Settings`,claddaghFocusScaleRatio:`Active Lyric Scale Ratio`,claddaghRadiusScale:`Orbit Radius Scale`,claddaghEllipseTiltDeg:`Orbit Tilt Degree`,claddaghShowAxisLine:`Center Axis Line`,claddaghLetterSpacingOffset:`Letter Spacing`,pendoloSettings:`Pendolo Settings`,pendoloSettingsDesc:`Control wheel center position, arc radius, angle spread, escapement snappiness, and pendulum swing intensity.`,pendoloWheelCenterX:`Wheel Center X (0 = Left Edge)`,pendoloArcRadius:`Arc Radius`,pendoloArcAngleDeg:`Arc Angle Spread`,pendoloTickSnappiness:`Escapement Snappiness`,pendoloActiveScale:`Active Line Scale`,pendoloShowGearDecor:`Clockwork Markings`,pendoloShowCenterGradient:`Gear Center Dark Gradient`,",
+     "replace": "tiltColorSchemePrimaryAll:`Single 2`,claddaghSettings:`Claddagh Settings`,claddaghFocusScaleRatio:`Active Lyric Scale Ratio`,claddaghRadiusScale:`Orbit Radius Scale`,claddaghEllipseTiltDeg:`Orbit Tilt Degree`,claddaghShowAxisLine:`Center Axis Line`,claddaghLetterSpacingOffset:`Main Lyric Letter Spacing`,claddaghShowTranslation:`Show Translation`,claddaghTranslationScaleRatio:`Translation Scale Ratio`,claddaghTranslationLetterSpacing:`Translation Letter Spacing`,claddaghOffsetX:`Horizontal Position`,claddaghOffsetY:`Vertical Position`,pendoloSettings:`Pendolo Settings`,pendoloSettingsDesc:`Control wheel center position, arc radius, angle spread, escapement snappiness, and pendulum swing intensity.`,pendoloWheelCenterX:`Wheel Center X (0 = Left Edge)`,pendoloWheelCenterXMirror:`Wheel Center X (0 = Right Edge)`,pendoloArcRadius:`Arc Radius`,pendoloArcAngleDeg:`Arc Angle Spread`,pendoloTickSnappiness:`Escapement Snappiness`,pendoloActiveScale:`Active Line Scale`,pendoloShowGearDecor:`Clockwork Markings`,pendoloShowCenterGradient:`Gear Center Dark Gradient`,"
+    },
+    {
+     "find": "monetBackgroundWashTheme:`Theme Color`,monetBackgroundWashCustom:`Custom`,monetBackgroundWashCustomColor:`Custom Wash Color`,monetPortraitSource:`Right Portrait Source`,monetPortraitSourceCover:`Cover`,monetPortraitSourceCustom:`Custom Image`,monetPortraitStyle:`Cover Shape`,monetPortraitStyleRectangular:`Rectangular`,monetPortraitStyleSquare:`Square`,monetPortraitDragHanger:`Drag Hanger`,monetUploadPortrait:`Upload Portrait`,monetClearPortrait:`Clear Portrait`,monetAudioStyle:`Audio Style`,monetAudioStyleBar:`Bars`,monetAudioStyleLine:`Line`,monetShowAudioVisualization:`Audio visualization`,monetFontScale:`Font Size Scale`,monetShowDescription:`Show Song Description`,monetGroupBackgroundSource:`Background Source`,monetGroupLayoutPosition:`Layout & Position`,monetGroupFiltersPostProcessing:`Filters & Post-processing`,monetGroupColorTintWash:`Color Tint & Wash`,importExportTitle:`Backup & Import`,importPlaceholder:`Paste a config code,",
+     "replace": "monetBackgroundWashTheme:`Theme Color`,monetBackgroundWashCustom:`Custom`,monetBackgroundWashCustomColor:`Custom Wash Color`,monetPortraitSource:`Right Portrait Source`,monetPortraitSourceCover:`Cover`,monetPortraitSourceCustom:`Custom Image`,monetPortraitSourceOff:`Off`,monetMirrorLayout:`Mirror Layout`,monetPortraitStyle:`Cover Shape`,monetPortraitStyleRectangular:`Rectangular`,monetPortraitStyleSquare:`Square`,monetPortraitDragHanger:`Drag Hanger`,monetUploadPortrait:`Upload Portrait`,monetClearPortrait:`Clear Portrait`,monetAudioStyle:`Audio Style`,monetAudioStyleBar:`Bars`,monetAudioStyleLine:`Line`,monetShowAudioVisualization:`Audio visualization`,monetFontScale:`Font Size Scale`,monetShowDescription:`Show Song Description`,monetDescriptionText:`Custom Description`,monetDescriptionTextPlaceholder:`Leave empty for the default`,monetGroupBackgroundSource:`Background Source`,monetGroupLayoutPosition:`Layout & Position`,monetGroupFiltersPostProcessing:`Filters & Post-processing`,monetGroupColorTintWash:`Color Tint & Wash`,importExportTitle:`Backup & Import`,importPlaceholder:`Paste a config code,"
+    },
+    {
+     "find": "tiltColorSchemePrimaryAll:`单色2`,claddaghSettings:`回环参数`,claddaghFocusScaleRatio:`主歌词放大倍率`,claddaghRadiusScale:`轨道半径`,claddaghEllipseTiltDeg:`轨道倾斜度`,claddaghShowAxisLine:`中间轴线`,claddaghLetterSpacingOffset:`字符间距`,pendoloSettings:`时计参数`,pendoloSettingsDesc:`调整歌词弧形轮盘圆心位置、轮盘半径、弧度角度与擒纵咬合力度。`,pendoloWheelCenterX:`轮盘水平位置 (0 = 左边缘)`,pendoloArcRadius:`轮盘半径`,pendoloArcAngleDeg:`弧度角度`,pendoloTickSnappiness:`擒纵咬合力度`,pendoloActiveScale:`聚焦句缩放`,pendoloShowGearDecor:`机械齿轮饰线`,pendoloShowCenterGradient:`齿轮中央深色渐变`,",
+     "replace": "tiltColorSchemePrimaryAll:`单色2`,claddaghSettings:`回环参数`,claddaghFocusScaleRatio:`主歌词放大倍率`,claddaghRadiusScale:`轨道半径`,claddaghEllipseTiltDeg:`轨道倾斜度`,claddaghShowAxisLine:`中间轴线`,claddaghLetterSpacingOffset:`主歌词字符间距`,claddaghShowTranslation:`显示翻译`,claddaghTranslationScaleRatio:`翻译放大倍率`,claddaghTranslationLetterSpacing:`翻译字符间距`,claddaghOffsetX:`左右位置`,claddaghOffsetY:`上下位置`,pendoloSettings:`时计参数`,pendoloSettingsDesc:`调整歌词弧形轮盘圆心位置、轮盘半径、弧度角度与擒纵咬合力度。`,pendoloWheelCenterX:`轮盘水平位置 (0 = 左边缘)`,pendoloWheelCenterXMirror:`轮盘水平位置 (0 = 右边缘)`,pendoloArcRadius:`轮盘半径`,pendoloArcAngleDeg:`弧度角度`,pendoloTickSnappiness:`擒纵咬合力度`,pendoloActiveScale:`聚焦句缩放`,pendoloShowGearDecor:`机械齿轮饰线`,pendoloShowCenterGradient:`齿轮中央深色渐变`,"
+    },
+    {
+     "find": "monetBackgroundWashTheme:`主题色`,monetBackgroundWashCustom:`自定义`,monetBackgroundWashCustomColor:`自定义水洗色`,monetPortraitSource:`右侧肖像来源`,monetPortraitSourceCover:`封面`,monetPortraitSourceCustom:`自定义图片`,monetPortraitStyle:`封面形状`,monetPortraitStyleRectangular:`长方形`,monetPortraitStyleSquare:`正方形`,monetPortraitDragHanger:`拖拽调整按钮`,monetUploadPortrait:`上传肖像图`,monetClearPortrait:`清空肖像图`,monetAudioStyle:`频谱样式`,monetAudioStyleBar:`柱状`,monetAudioStyleLine:`线条`,monetShowAudioVisualization:`音频图案`,monetFontScale:`字体缩放`,monetShowDescription:`显示歌曲描述`,monetGroupBackgroundSource:`背景来源`,monetGroupLayoutPosition:`布局与对齐`,monetGroupFiltersPostProcessing:`视觉增强与滤镜`,monetGroupColorTintWash:`叠色与水洗`,importExportTitle:`备份与导入`,importPlaceholder:`在此处粘贴配置码、标准 JSON，或一条 OBS 链接...`,",
+     "replace": "monetBackgroundWashTheme:`主题色`,monetBackgroundWashCustom:`自定义`,monetBackgroundWashCustomColor:`自定义水洗色`,monetPortraitSource:`右侧肖像来源`,monetPortraitSourceCover:`封面`,monetPortraitSourceCustom:`自定义图片`,monetPortraitSourceOff:`关闭`,monetMirrorLayout:`歌词左右镜像`,monetPortraitStyle:`封面形状`,monetPortraitStyleRectangular:`长方形`,monetPortraitStyleSquare:`正方形`,monetPortraitDragHanger:`拖拽调整按钮`,monetUploadPortrait:`上传肖像图`,monetClearPortrait:`清空肖像图`,monetAudioStyle:`频谱样式`,monetAudioStyleBar:`柱状`,monetAudioStyleLine:`线条`,monetShowAudioVisualization:`音频图案`,monetFontScale:`字体缩放`,monetShowDescription:`显示歌曲描述`,monetDescriptionText:`自定义描述`,monetDescriptionTextPlaceholder:`留空则使用默认描述`,monetGroupBackgroundSource:`背景来源`,monetGroupLayoutPosition:`布局与对齐`,monetGroupFiltersPostProcessing:`视觉增强与滤镜`,monetGroupColorTintWash:`叠色与水洗`,importExportTitle:`备份与导入`,importPlaceholder:`在此处粘贴配置码、标准 JSON，或一条 OBS 链接...`,"
+    },
+    {
+     "find": "tiltColorSchemePrimaryAll:`單色2`,claddaghSettings:`迴環引數`,claddaghFocusScaleRatio:`主歌詞放大倍率`,claddaghRadiusScale:`軌道半徑`,claddaghEllipseTiltDeg:`軌道傾斜度`,claddaghShowAxisLine:`中間軸線`,claddaghLetterSpacingOffset:`字元間距`,pendoloSettings:`時計引數`,pendoloSettingsDesc:`調整歌詞弧形輪盤圓心位置、輪盤半徑、弧度角度與擒縱咬合力度。`,pendoloWheelCenterX:`輪盤水平位置 (0 = 左邊緣)`,pendoloArcRadius:`輪盤半徑`,pendoloArcAngleDeg:`弧度角度`,pendoloTickSnappiness:`擒縱咬合力度`,pendoloActiveScale:`聚焦句縮放`,pendoloShowGearDecor:`機械齒輪飾線`,pendoloShowCenterGradient:`齒輪中央深色漸變`,",
+     "replace": "tiltColorSchemePrimaryAll:`單色2`,claddaghSettings:`迴環引數`,claddaghFocusScaleRatio:`主歌詞放大倍率`,claddaghRadiusScale:`軌道半徑`,claddaghEllipseTiltDeg:`軌道傾斜度`,claddaghShowAxisLine:`中間軸線`,claddaghLetterSpacingOffset:`主歌詞字元間距`,claddaghShowTranslation:`顯示翻譯`,claddaghTranslationScaleRatio:`翻譯放大倍率`,claddaghTranslationLetterSpacing:`翻譯字元間距`,claddaghOffsetX:`左右位置`,claddaghOffsetY:`上下位置`,pendoloSettings:`時計引數`,pendoloSettingsDesc:`調整歌詞弧形輪盤圓心位置、輪盤半徑、弧度角度與擒縱咬合力度。`,pendoloWheelCenterX:`輪盤水平位置 (0 = 左邊緣)`,pendoloWheelCenterXMirror:`輪盤水平位置 (0 = 右邊緣)`,pendoloArcRadius:`輪盤半徑`,pendoloArcAngleDeg:`弧度角度`,pendoloTickSnappiness:`擒縱咬合力度`,pendoloActiveScale:`聚焦句縮放`,pendoloShowGearDecor:`機械齒輪飾線`,pendoloShowCenterGradient:`齒輪中央深色漸變`,"
+    },
+    {
+     "find": "monetBackgroundWashTheme:`主題色`,monetBackgroundWashCustom:`自定義`,monetBackgroundWashCustomColor:`自定義水洗色`,monetPortraitSource:`右側肖像來源`,monetPortraitSourceCover:`封面`,monetPortraitSourceCustom:`自定義圖片`,monetPortraitStyle:`封面形狀`,monetPortraitStyleRectangular:`長方形`,monetPortraitStyleSquare:`正方形`,monetPortraitDragHanger:`拖曳調整按鈕`,monetUploadPortrait:`上傳肖像圖`,monetClearPortrait:`清空肖像圖`,monetAudioStyle:`頻譜樣式`,monetAudioStyleBar:`柱狀`,monetAudioStyleLine:`線條`,monetShowAudioVisualization:`音訊圖案`,monetFontScale:`字型縮放`,monetShowDescription:`顯示歌曲描述`,monetGroupBackgroundSource:`背景來源`,monetGroupLayoutPosition:`佈局與對齊`,monetGroupFiltersPostProcessing:`視覺增強與濾鏡`,monetGroupColorTintWash:`疊色與水洗`,importExportTitle:`備份與匯入`,importPlaceholder:`在此處貼上配置碼、標準 JSON，或一條 OBS 連結...`,",
+     "replace": "monetBackgroundWashTheme:`主題色`,monetBackgroundWashCustom:`自定義`,monetBackgroundWashCustomColor:`自定義水洗色`,monetPortraitSource:`右側肖像來源`,monetPortraitSourceCover:`封面`,monetPortraitSourceCustom:`自定義圖片`,monetPortraitSourceOff:`關閉`,monetMirrorLayout:`歌詞左右鏡像`,monetPortraitStyle:`封面形狀`,monetPortraitStyleRectangular:`長方形`,monetPortraitStyleSquare:`正方形`,monetPortraitDragHanger:`拖曳調整按鈕`,monetUploadPortrait:`上傳肖像圖`,monetClearPortrait:`清空肖像圖`,monetAudioStyle:`頻譜樣式`,monetAudioStyleBar:`柱狀`,monetAudioStyleLine:`線條`,monetShowAudioVisualization:`音訊圖案`,monetFontScale:`字型縮放`,monetShowDescription:`顯示歌曲描述`,monetDescriptionText:`自訂描述`,monetDescriptionTextPlaceholder:`留空則使用預設描述`,monetGroupBackgroundSource:`背景來源`,monetGroupLayoutPosition:`佈局與對齊`,monetGroupFiltersPostProcessing:`視覺增強與濾鏡`,monetGroupColorTintWash:`疊色與水洗`,importExportTitle:`備份與匯入`,importPlaceholder:`在此處貼上配置碼、標準 JSON，或一條 OBS 連結...`,"
+    },
+    {
+     "find": "tiltColorSchemePrimaryAll:`Tunggal 2`,claddaghSettings:`Pengaturan Claddagh`,claddaghFocusScaleRatio:`Rasio Skala Lirik Aktif`,claddaghRadiusScale:`Skala Radius Orbit`,claddaghEllipseTiltDeg:`Derajat Kemiringan Orbit`,claddaghShowAxisLine:`Garis Sumbu Tengah`,claddaghLetterSpacingOffset:`Jarak Huruf`,pendoloSettings:`Pengaturan Pendolo`,pendoloSettingsDesc:`Kontrol posisi pusat roda, radius busur, sebaran sudut, ketegasan escapement, dan intensitas ayunan pendulum.`,pendoloWheelCenterX:`Pusat Roda X (0 = Tepi Kiri)`,pendoloArcRadius:`Radius Busur`,pendoloArcAngleDeg:`Sebaran Sudut Busur`,pendoloTickSnappiness:`Ketegasan Escapement`,pendoloActiveScale:`Skala Baris Aktif`,pendoloShowGearDecor:`Tanda Jam`,pendoloShowCenterGradient:`Gradien Gelap Pusat Roda`,",
+     "replace": "tiltColorSchemePrimaryAll:`Tunggal 2`,claddaghSettings:`Pengaturan Claddagh`,claddaghFocusScaleRatio:`Rasio Skala Lirik Aktif`,claddaghRadiusScale:`Skala Radius Orbit`,claddaghEllipseTiltDeg:`Derajat Kemiringan Orbit`,claddaghShowAxisLine:`Garis Sumbu Tengah`,claddaghLetterSpacingOffset:`Jarak Huruf Lirik Utama`,claddaghShowTranslation:`Tampilkan Terjemahan`,claddaghTranslationScaleRatio:`Skala Terjemahan`,claddaghTranslationLetterSpacing:`Jarak Huruf Terjemahan`,claddaghOffsetX:`Posisi Horizontal`,claddaghOffsetY:`Posisi Vertikal`,pendoloSettings:`Pengaturan Pendolo`,pendoloSettingsDesc:`Kontrol posisi pusat roda, radius busur, sebaran sudut, ketegasan escapement, dan intensitas ayunan pendulum.`,pendoloWheelCenterX:`Pusat Roda X (0 = Tepi Kiri)`,pendoloWheelCenterXMirror:`Pusat Roda X (0 = Tepi Kanan)`,pendoloArcRadius:`Radius Busur`,pendoloArcAngleDeg:`Sebaran Sudut Busur`,pendoloTickSnappiness:`Ketegasan Escapement`,pendoloActiveScale:`Skala Baris Aktif`,pendoloShowGearDecor:`Tanda Jam`,pendoloShowCenterGradient:`Gradien Gelap Pusat Roda`,"
+    },
+    {
+     "find": "monetBackgroundWashTheme:`Warna Tema`,monetBackgroundWashCustom:`Kustom`,monetBackgroundWashCustomColor:`Warna Cuci Kustom`,monetPortraitSource:`Sumber Potret Kanan`,monetPortraitSourceCover:`Sampul`,monetPortraitSourceCustom:`Gambar Kustom`,monetPortraitStyle:`Bentuk Sampul`,monetPortraitStyleRectangular:`Persegi Panjang`,monetPortraitStyleSquare:`Persegi`,monetPortraitDragHanger:`Gantungan Seret`,monetUploadPortrait:`Unggah Potret`,monetClearPortrait:`Bersihkan Potret`,monetAudioStyle:`Gaya Audio`,monetAudioStyleBar:`Batang`,monetAudioStyleLine:`Garis`,monetShowAudioVisualization:`Visualisasi audio`,monetFontScale:`Skala Ukuran Font`,monetShowDescription:`Tampilkan Deskripsi Lagu`,monetGroupBackgroundSource:`Sumber Latar Belakang`,monetGroupLayoutPosition:`Tata Letak & Posisi`,monetGroupFiltersPostProcessing:`Filter & Pasca-pemrosesan`,monetGroupColorTintWash:`Pewarnaan & Cuci Warna`,importExportTitle:`Cadangkan & Impor`,importPlaceholder:`Tempel kode konfigurasi,",
+     "replace": "monetBackgroundWashTheme:`Warna Tema`,monetBackgroundWashCustom:`Kustom`,monetBackgroundWashCustomColor:`Warna Cuci Kustom`,monetPortraitSource:`Sumber Potret Kanan`,monetPortraitSourceCover:`Sampul`,monetPortraitSourceCustom:`Gambar Kustom`,monetPortraitSourceOff:`Mati`,monetMirrorLayout:`Cermin Tata Letak`,monetPortraitStyle:`Bentuk Sampul`,monetPortraitStyleRectangular:`Persegi Panjang`,monetPortraitStyleSquare:`Persegi`,monetPortraitDragHanger:`Gantungan Seret`,monetUploadPortrait:`Unggah Potret`,monetClearPortrait:`Bersihkan Potret`,monetAudioStyle:`Gaya Audio`,monetAudioStyleBar:`Batang`,monetAudioStyleLine:`Garis`,monetShowAudioVisualization:`Visualisasi audio`,monetFontScale:`Skala Ukuran Font`,monetShowDescription:`Tampilkan Deskripsi Lagu`,monetDescriptionText:`Deskripsi Kustom`,monetDescriptionTextPlaceholder:`Kosongkan untuk bawaan`,monetGroupBackgroundSource:`Sumber Latar Belakang`,monetGroupLayoutPosition:`Tata Letak & Posisi`,monetGroupFiltersPostProcessing:`Filter & Pasca-pemrosesan`,monetGroupColorTintWash:`Pewarnaan & Cuci Warna`,importExportTitle:`Cadangkan & Impor`,importPlaceholder:`Tempel kode konfigurasi,"
+    },
+    {
+     "find": "tiltColorSchemePrimaryAll:`Đơn sắc 2`,claddaghSettings:`Cài đặt Claddagh`,claddaghFocusScaleRatio:`Tỷ lệ câu hát chính`,claddaghRadiusScale:`Bán kính quỹ đạo`,claddaghEllipseTiltDeg:`Độ nghiêng quỹ đạo`,claddaghShowAxisLine:`Đường trục trung tâm`,claddaghLetterSpacingOffset:`Khoảng cách ký tự`,pendoloSettings:`Cài đặt Pendolo`,pendoloSettingsDesc:`Điều chỉnh tâm bánh xe, bán kính cung, góc tỏa và độ nảy bộ hồi.`,pendoloWheelCenterX:`Tọa độ X tâm bánh xe (0 = Cạnh trái)`,pendoloArcRadius:`Bán kính cung`,pendoloArcAngleDeg:`Góc tỏa cung tròn`,pendoloTickSnappiness:`Độ nảy bộ hồi`,pendoloActiveScale:`Tỷ lệ phóng to dòng phát`,pendoloShowGearDecor:`Họa tiết bánh răng`,pendoloShowCenterGradient:`Chuyển sắc tối tâm bánh răng`,",
+     "replace": "tiltColorSchemePrimaryAll:`Đơn sắc 2`,claddaghSettings:`Cài đặt Claddagh`,claddaghFocusScaleRatio:`Tỷ lệ câu hát chính`,claddaghRadiusScale:`Bán kính quỹ đạo`,claddaghEllipseTiltDeg:`Độ nghiêng quỹ đạo`,claddaghShowAxisLine:`Đường trục trung tâm`,claddaghLetterSpacingOffset:`Khoảng cách ký tự lời chính`,claddaghShowTranslation:`Hiện bản dịch`,claddaghTranslationScaleRatio:`Tỷ lệ phóng bản dịch`,claddaghTranslationLetterSpacing:`Khoảng cách ký tự bản dịch`,claddaghOffsetX:`Vị trí ngang`,claddaghOffsetY:`Vị trí dọc`,pendoloSettings:`Cài đặt Pendolo`,pendoloSettingsDesc:`Điều chỉnh tâm bánh xe, bán kính cung, góc tỏa và độ nảy bộ hồi.`,pendoloWheelCenterX:`Tọa độ X tâm bánh xe (0 = Cạnh trái)`,pendoloWheelCenterXMirror:`Tọa độ X tâm bánh xe (0 = Cạnh phải)`,pendoloArcRadius:`Bán kính cung`,pendoloArcAngleDeg:`Góc tỏa cung tròn`,pendoloTickSnappiness:`Độ nảy bộ hồi`,pendoloActiveScale:`Tỷ lệ phóng to dòng phát`,pendoloShowGearDecor:`Họa tiết bánh răng`,pendoloShowCenterGradient:`Chuyển sắc tối tâm bánh răng`,"
+    },
+    {
+     "find": "monetBackgroundWashCustomColor:`Màu phai tùy chỉnh`,monetPortraitSource:`Nguồn ảnh nhân vật (Portrait) bên phải`,monetPortraitSourceCover:`Ảnh bìa`,monetPortraitSourceCustom:`Ảnh tùy chỉnh`,monetPortraitStyle:`Hình dạng bìa`,monetPortraitStyleRectangular:`Chữ nhật`,monetPortraitStyleSquare:`Hình vuông`,monetPortraitDragHanger:`Nút kéo điều chỉnh`,monetUploadPortrait:`Tải ảnh nhân vật (Portrait)`,monetClearPortrait:`Xóa ảnh nhân vật (Portrait)`,monetAudioStyle:`Kiểu phổ âm`,monetAudioStyleBar:`Cột`,monetAudioStyleLine:`Đường nét`,monetShowAudioVisualization:`Hiệu ứng sóng âm`,monetFontScale:`Tỷ lệ cỡ chữ`,monetShowDescription:`Hiện mô tả bài hát`,monetGroupBackgroundSource:`Nguồn hình nền`,monetGroupLayoutPosition:`Bố cục & Vị trí`,monetGroupFiltersPostProcessing:`Bộ lọc & Hậu kỳ`,monetGroupColorTintWash:`Phủ màu & Hòa trộn`,importExportTitle:`Sao lưu & Nhập`,importPlaceholder:`Dán mã cấu hình,",
+     "replace": "monetBackgroundWashCustomColor:`Màu phai tùy chỉnh`,monetPortraitSource:`Nguồn ảnh nhân vật (Portrait) bên phải`,monetPortraitSourceCover:`Ảnh bìa`,monetPortraitSourceCustom:`Ảnh tùy chỉnh`,monetPortraitSourceOff:`Tắt`,monetMirrorLayout:`Gương Bố Cục`,monetPortraitStyle:`Hình dạng bìa`,monetPortraitStyleRectangular:`Chữ nhật`,monetPortraitStyleSquare:`Hình vuông`,monetPortraitDragHanger:`Nút kéo điều chỉnh`,monetUploadPortrait:`Tải ảnh nhân vật (Portrait)`,monetClearPortrait:`Xóa ảnh nhân vật (Portrait)`,monetAudioStyle:`Kiểu phổ âm`,monetAudioStyleBar:`Cột`,monetAudioStyleLine:`Đường nét`,monetShowAudioVisualization:`Hiệu ứng sóng âm`,monetFontScale:`Tỷ lệ cỡ chữ`,monetShowDescription:`Hiện mô tả bài hát`,monetDescriptionText:`Mô tả tùy chỉnh`,monetDescriptionTextPlaceholder:`Để trống để dùng mặc định`,monetGroupBackgroundSource:`Nguồn hình nền`,monetGroupLayoutPosition:`Bố cục & Vị trí`,monetGroupFiltersPostProcessing:`Bộ lọc & Hậu kỳ`,monetGroupColorTintWash:`Phủ màu & Hòa trộn`,importExportTitle:`Sao lưu & Nhập`,importPlaceholder:`Dán mã cấu hình,"
+    }
+   ]
+  },
+  {
+   "path": "dist/assets/registry-DPG6qUYw.js",
+   "origSha": "c78d27c75bcefb77fce0d7ab1609d1f81bd83a0a54f33f00198159be51a772f7",
+   "patchedSha": "c5e8e6f65c437f782be62658203faeead5142fa500ed9c5fb8f3c387d6ce1af6",
+   "rules": [
+    {
+     "find": "ellipseTiltDeg:un(r.ellipseTiltDeg??j.ellipseTiltDeg),showAxisLine:r.showAxisLine??j.showAxisLine,letterSpacingOffset:Tn(r.letterSpacingOffset??j.letterSpacingOffset)},o={onDragStart:t,onDragEnd:n};return(0,q.jsxs)(N,{def:rn,children:[(0,q.jsx)(z,{...o,label:e(`options.claddaghFocusScaleRatio`),value:a.focusScaleRatio,min:0,max:1.5,step:.05,format:e=>V(e+1),onChange:e=>i?.({focusScaleRatio:e})}),(0,q.jsx)(z,{...o,label:e(`options.claddaghRadiusScale`),",
+     "replace": "ellipseTiltDeg:un(r.ellipseTiltDeg??j.ellipseTiltDeg),showAxisLine:r.showAxisLine??j.showAxisLine,letterSpacingOffset:Tn(r.letterSpacingOffset??j.letterSpacingOffset),offsetX:r.offsetX??j.offsetX??0,offsetY:r.offsetY??j.offsetY??0,showTranslation:r.showTranslation??j.showTranslation??!1,translationScaleRatio:cn(r.translationScaleRatio??j.translationScaleRatio??.65),translationLetterSpacingOffset:Tn(r.translationLetterSpacingOffset??j.translationLetterSpacingOffset??0)},o={onDragStart:t,onDragEnd:n};return(0,q.jsxs)(N,{def:rn,children:[(0,q.jsx)(L,{label:e(`options.claddaghShowTranslation`),children:(0,q.jsx)(F,{checked:a.showTranslation,onChange:e=>i?.({showTranslation:e})})}),(0,q.jsx)(z,{...o,label:e(`options.claddaghFocusScaleRatio`),value:a.focusScaleRatio,min:0,max:1.5,step:.05,format:e=>V(e+1),onChange:e=>i?.({focusScaleRatio:e})}),(0,q.jsx)(I,{when:a.showTranslation,children:(0,q.jsx)(z,{...o,label:e(`options.claddaghTranslationScaleRatio`),value:a.translationScaleRatio,min:0,max:1.5,step:.05,format:e=>V(e+1),onChange:e=>i?.({translationScaleRatio:e})})}),(0,q.jsx)(z,{...o,label:e(`options.claddaghRadiusScale`),"
+    },
+    {
+     "find": "onChange:e=>i?.({letterSpacingOffset:e})})]})},Dn=t({",
+     "replace": "onChange:e=>i?.({letterSpacingOffset:e})}),(0,q.jsx)(I,{when:a.showTranslation,children:(0,q.jsx)(z,{...o,label:e(`options.claddaghTranslationLetterSpacing`),value:a.translationLetterSpacingOffset,min:-5,max:20,step:.5,format:e=>`${e>0?`+`:``}${e.toFixed(1)}px`,onChange:e=>i?.({translationLetterSpacingOffset:e})})}),(0,q.jsx)(z,{...o,label:e(`options.claddaghOffsetX`),value:a.offsetX,min:-50,max:50,step:1,format:e=>`${e>0?`+`:``}${e}%`,onChange:e=>i?.({offsetX:e})}),(0,q.jsx)(z,{...o,label:e(`options.claddaghOffsetY`),value:a.offsetY,min:-50,max:50,step:1,format:e=>`${e>0?`+`:``}${e}%`,onChange:e=>i?.({offsetY:e})})]})},Dn=t({"
+    },
+    {
+     "find": "p]=(0,G.useState)(null),m={keywordColoringEnabled:t.keywordColoringEnabled??O.keywordColoringEnabled,showDescription:t.showDescription??O.showDescription,showAudioVisualization:t.showAudioVisualization??O.showAudioVisualization,audioStyle:t.audioStyle??O.audioStyle,fontScale:Xr(t.fontScale??O.fontScale,.7,1.5,O.fontScale),portraitSource:t.portraitSource??O.portraitSource,portraitStyle:t.portraitStyle??O.portraitStyle??`rectangular`,showPortraitDragHanger:t.showPortraitDragHanger??O.showPortraitDragHanger},h=async t=>{let i=Array.from(t.target.files??[]);if(",
+     "replace": "p]=(0,G.useState)(null),[mdT,mdS]=(0,G.useState)(null),m={keywordColoringEnabled:t.keywordColoringEnabled??O.keywordColoringEnabled,showDescription:t.showDescription??O.showDescription,showAudioVisualization:t.showAudioVisualization??O.showAudioVisualization,audioStyle:t.audioStyle??O.audioStyle,fontScale:Xr(t.fontScale??O.fontScale,.7,1.5,O.fontScale),portraitSource:t.portraitSource??O.portraitSource,portraitStyle:t.portraitStyle??O.portraitStyle??`rectangular`,showPortraitDragHanger:t.showPortraitDragHanger??O.showPortraitDragHanger,mirrorLayout:t.mirrorLayout??O.mirrorLayout},h=async t=>{let i=Array.from(t.target.files??[]);if("
+    },
+    {
+     "find": "onChange:e=>n?.({showDescription:e})})]}),(0,q.jsxs)(N,{def:Jr,children:[(0,q.jsx)(L,{label:e(`options.monetPortraitSource`),children:(0,q.jsx)(P,{value:m.portraitSource,options:[{value:`cover`,label:e(`options.monetPortraitSourceCover`)},{value:`custom`,label:e(`options.monetPortraitSourceCustom`),disabled:!c&&!u}],onChange:e=>n?.({portraitSource:e})}",
+     "replace": "onChange:e=>n?.({showDescription:e})}),(0,q.jsx)(I,{when:m.showDescription,children:(0,q.jsx)(L,{sub:!0,label:e(`options.monetDescriptionText`),children:(0,q.jsx)(`input`,{type:`text`,value:mdT??(t.descriptionText??``),maxLength:120,spellCheck:!1,placeholder:e(`options.monetDescriptionTextPlaceholder`),onChange:ev=>{let v=ev.target.value;mdS(v),n?.({descriptionText:v})},onBlur:()=>mdS(null),onKeyDown:ev=>{ev.stopPropagation(),ev.key===`Enter`&&!ev.nativeEvent.isComposing&&ev.currentTarget.blur()},className:`st-t-fast max-w-full rounded-lg border border-transparent bg-[var(--st-fill)] text-[color:var(--st-t1)] outline-none transition-colors placeholder:text-[color:var(--st-t3)] focus-within:border-[var(--st-accent)] h-8 px-2.5 text-[13px]`,style:{width:220}})})}),(0,q.jsx)(U,{label:e(`options.monetMirrorLayout`),checked:m.mirrorLayout,onChange:e=>n?.({mirrorLayout:e})})]}),(0,q.jsxs)(N,{def:Jr,children:[(0,q.jsx)(L,{label:e(`options.monetPortraitSource`),children:(0,q.jsx)(P,{value:m.portraitSource,options:[{value:`cover`,label:e(`options.monetPortraitSourceCover`)},{value:`custom`,label:e(`options.monetPortraitSourceCustom`),disabled:!c&&!u},{value:`off`,label:e(`options.monetPortraitSourceOff`)}],onChange:e=>n?.({portraitSource:e})}"
+    },
+    {
+     "find": "q.jsx)(z,{...o,label:e(`options.pendoloWheelCenterX`),value:a.wheelCenterX,min:-.2,max:.4,step:.01,format:e=>`${",
+     "replace": "q.jsx)(z,{...o,label:e(a.mirrorLayout?`options.pendoloWheelCenterXMirror`:`options.pendoloWheelCenterX`),value:a.wheelCenterX,min:-.2,max:.4,step:.01,format:e=>`${"
+    },
+    {
+     "find": "onChange:e=>n?.({enableLineGlow:e})})]})},Ni=t({",
+     "replace": "onChange:e=>n?.({enableLineGlow:e})}),(0,q.jsx)(U,{label:e(`options.monetMirrorLayout`),checked:a.mirrorLayout??!1,onChange:e=>n?.({mirrorLayout:e})})]})},Ni=t({"
+    }
+   ]
+  },
+  {
+   "path": "dist/assets/tuningRegistry-CZAepwqu.js",
+   "origSha": "1d86364747e8833073a2edd35f47219551ea873c348e5a4e9d1ca1f68dacb000",
+   "patchedSha": "fef4f8b0ff64aa201a4d09f4d900c828ab0a0af44fec92e32c0743f9d4c64176",
+   "rules": [
+    {
+     "find": "60),Be=k(-5,20),Ve=t({mode:`claddagh`,defaults:b,settingsKey:`claddaghTuning`,settingsSetterKey:`handleSetCladdaghTuning`,settingsResetterKey:`handleResetCladdaghTuning`,storage:{key:`claddagh_tuning`,read:e=>({focusScaleRatio:A(e.focusScaleRatio,b.focusScaleRatio),radiusScale:j(e.radiusScale,b.radiusScale),ellipseTiltDeg:ze(e.ellipseTiltDeg,b.ellipseTiltDeg),showAxisLine:typeof e.showAxisLine==`boolean`?e.showAxisLine:b.showAxisLine,letterSpacingOffset:Be(e.letterSpacingOffset,b.letterSpacingOffset)}),merge:(e,t)=>({focusScaleRatio:A(t.focusScaleRatio??e.focusScaleRatio,e.focusScaleRatio),radiusScale:j(t.radiusScale??e.radiusScale,e.radiusScale),ellipseTiltDeg:ze(t.ellipseTiltDeg??e.ellipseTiltDeg,e.ellipseTiltDeg),showAxisLine:t.showAxisLine??e.showAxisLine,letterSpacingOffset:Be(t.letterSpacingOffset??e.letterSpacingOffset,e.letterSpacingOffset)}),resetNotice:`notifications.claddaghReset`},apply:(",
+     "replace": "60),Be=k(-5,20),clOf=k(-50,50),Ve=t({mode:`claddagh`,defaults:b,settingsKey:`claddaghTuning`,settingsSetterKey:`handleSetCladdaghTuning`,settingsResetterKey:`handleResetCladdaghTuning`,storage:{key:`claddagh_tuning`,read:e=>({focusScaleRatio:A(e.focusScaleRatio,b.focusScaleRatio),radiusScale:j(e.radiusScale,b.radiusScale),ellipseTiltDeg:ze(e.ellipseTiltDeg,b.ellipseTiltDeg),showAxisLine:typeof e.showAxisLine==`boolean`?e.showAxisLine:b.showAxisLine,letterSpacingOffset:Be(e.letterSpacingOffset,b.letterSpacingOffset),offsetX:clOf(e.offsetX,b.offsetX??0),offsetY:clOf(e.offsetY,b.offsetY??0),showTranslation:typeof e.showTranslation==`boolean`?e.showTranslation:b.showTranslation??!1,translationScaleRatio:A(e.translationScaleRatio,b.translationScaleRatio??.65),translationLetterSpacingOffset:Be(e.translationLetterSpacingOffset,b.translationLetterSpacingOffset??0)}),merge:(e,t)=>({focusScaleRatio:A(t.focusScaleRatio??e.focusScaleRatio,e.focusScaleRatio),radiusScale:j(t.radiusScale??e.radiusScale,e.radiusScale),ellipseTiltDeg:ze(t.ellipseTiltDeg??e.ellipseTiltDeg,e.ellipseTiltDeg),showAxisLine:t.showAxisLine??e.showAxisLine,letterSpacingOffset:Be(t.letterSpacingOffset??e.letterSpacingOffset,e.letterSpacingOffset),offsetX:clOf(t.offsetX??e.offsetX,e.offsetX??0),offsetY:clOf(t.offsetY??e.offsetY,e.offsetY??0),showTranslation:t.showTranslation??e.showTranslation??!1,translationScaleRatio:A(t.translationScaleRatio??e.translationScaleRatio,e.translationScaleRatio??.65),translationLetterSpacingOffset:Be(t.translationLetterSpacingOffset??e.translationLetterSpacingOffset,e.translationLetterSpacingOffset??0)}),resetNotice:`notifications.claddaghReset`},apply:("
+    },
+    {
+     "find": "1.5,Math.max(.7,e)):t,dt=e=>e===`custom`?`custom`:c.portraitSource,B=e=>({keywordColoringEnabled:e.keywordColoringEnabled??c.keywordColoringEnabled,showDescription:e.showDescription??c.showDescription,showAudioVisualization:e.showAudioVisualization??c.showAudioVisualization,audioStyle:e.audioStyle===`line`?`line`:c.audioStyle,fontScale:ut(e.fontScale??c.fontScale,c.fontScale),portraitSource:dt(e.portraitSource),portraitOffsetX:typeof e.portraitOffsetX==`number`?Math.min(0,Math.max(-150,e.portraitOffsetX)):c.portraitOffsetX??0,portraitStyle:e.portraitStyle===`rectangular`?`rectangular`:c.portraitStyle,showPortraitDragHanger:e.showPortraitDragHanger??c.showPortraitDragHanger}),ft=t({mode:`monet`,defaults:c,",
+     "replace": "1.5,Math.max(.7,e)):t,dt=e=>e===`custom`?`custom`:e===`off`?`off`:c.portraitSource,B=e=>({keywordColoringEnabled:e.keywordColoringEnabled??c.keywordColoringEnabled,showDescription:e.showDescription??c.showDescription,showAudioVisualization:e.showAudioVisualization??c.showAudioVisualization,audioStyle:e.audioStyle===`line`?`line`:c.audioStyle,fontScale:ut(e.fontScale??c.fontScale,c.fontScale),portraitSource:dt(e.portraitSource),portraitOffsetX:typeof e.portraitOffsetX==`number`?Math.min(0,Math.max(-150,e.portraitOffsetX)):c.portraitOffsetX??0,portraitStyle:e.portraitStyle===`rectangular`?`rectangular`:c.portraitStyle,showPortraitDragHanger:e.showPortraitDragHanger??c.showPortraitDragHanger,mirrorLayout:e.mirrorLayout??c.mirrorLayout,descriptionText:typeof e.descriptionText==`string`?e.descriptionText.slice(0,120):c.descriptionText??``}),ft=t({mode:`monet`,defaults:c,"
+    },
+    {
+     "find": "1,1.6),showGearDecor:e.showGearDecor===`none`||e.showGearDecor===`subtle`||e.showGearDecor===`full`?e.showGearDecor:t.showGearDecor,showCenterGradient:typeof e.showCenterGradient==`boolean`?e.showCenterGradient:t.showCenterGradient??l.showCenterGradient,showCoverOnWatchFace:typeof e.showCoverOnWatchFace==`boolean`?e.showCoverOnWatchFace:t.showCoverOnWatchFace??l.showCoverOnWatchFace,enableLineGlow:typeof e.enableLineGlow==`boolean`?e.enableLineGlow:t.enableLineGlow??l.enableLineGlow}),yt=t({mode:`pendolo`,defaults:l,",
+     "replace": "1,1.6),showGearDecor:e.showGearDecor===`none`||e.showGearDecor===`subtle`||e.showGearDecor===`full`?e.showGearDecor:t.showGearDecor,showCenterGradient:typeof e.showCenterGradient==`boolean`?e.showCenterGradient:t.showCenterGradient??l.showCenterGradient,showCoverOnWatchFace:typeof e.showCoverOnWatchFace==`boolean`?e.showCoverOnWatchFace:t.showCoverOnWatchFace??l.showCoverOnWatchFace,enableLineGlow:typeof e.enableLineGlow==`boolean`?e.enableLineGlow:t.enableLineGlow??l.enableLineGlow,mirrorLayout:typeof e.mirrorLayout==`boolean`?e.mirrorLayout:t.mirrorLayout??!1}),yt=t({mode:`pendolo`,defaults:l,"
+    }
+   ]
+  },
+  {
+   "path": "dist/assets/src-BNDXyq_f.css",
+   "origSha": "375dd6e87bc4b4de6621b93da2ec34c67aee1f222ab9ec12918f8aa99572638f",
+   "patchedSha": "a3b21291461ad427a52a40bf089c2af00ed67de1f2b32cbaaac69458415c997b",
+   "rules": [
+    {
+     "find": "0,.2,1);transform:none}}\n",
+     "replace": "0,.2,1);transform:none}}\n.monet-mirror-portrait{padding-left:calc(var(--spacing) * 5)}@media (width>=40rem){.monet-mirror-portrait{padding-left:calc(var(--spacing) * 8)}}@media (width>=64rem){.monet-mirror-portrait{padding-left:calc(var(--spacing) * 10);justify-content:flex-start}}@media (width>=80rem){.monet-mirror-portrait{padding-left:calc(var(--spacing) * 12)}}\n[data-fs-mirror] .relative.block.whitespace-pre{margin-left:auto}\n"
+    }
+   ]
+  }
+ ]
+}
