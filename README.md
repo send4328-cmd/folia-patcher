@@ -25,6 +25,40 @@
 - **时计**
   - 「歌词左右镜像」：表盘移到右边，歌词弧线在左边。
 
+## 截图
+
+**莫奈：左右镜像（上：原版，下：镜像）**
+
+<img src="docs/images/monet-mirror.jpg" width="480" alt="莫奈：左右镜像（上：原版，下：镜像）">
+
+**莫奈：头像来源「关闭」（上：原版，下：关闭后）**
+
+<img src="docs/images/monet-portrait-off.jpg" width="480" alt="莫奈：头像来源「关闭」（上：原版，下：关闭后）">
+
+**回环：显示翻译（上：关，下：开）**
+
+<img src="docs/images/claddagh-translation.jpg" width="480" alt="回环：显示翻译（上：关，下：开）">
+
+**回环：调整圆环位置**
+
+<img src="docs/images/claddagh-position.jpg" width="480" alt="回环：调整圆环位置">
+
+**时计：左右镜像**
+
+<img src="docs/images/pendolo-mirror.jpg" width="480" alt="时计：左右镜像">
+
+**歌词样式按钮：滚轮切换时显示样式名称**
+
+<img src="docs/images/button-style-name.png" width="480" alt="歌词样式按钮：滚轮切换时显示样式名称">
+
+**歌词样式按钮：设置卡片**
+
+<img src="docs/images/button-settings-card.webp" width="480" alt="歌词样式按钮：设置卡片">
+
+**歌词样式按钮：卡片里的样式选择器**
+
+<img src="docs/images/button-style-picker.webp" width="480" alt="歌词样式按钮：卡片里的样式选择器">
+
 ## 安装
 
 1. **完全退出 Folia**（托盘图标也要退出）。
