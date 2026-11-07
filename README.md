@@ -31,9 +31,9 @@
 
 <img src="docs/images/monet-mirror.jpg" width="480" alt="莫奈：左右镜像（上：原版，下：镜像）">
 
-**莫奈：头像来源「关闭」（上：原版，下：关闭后）**
+**莫奈：头像来源「关闭」（上：原版布局，下：镜像布局）**
 
-<img src="docs/images/monet-portrait-off.jpg" width="480" alt="莫奈：头像来源「关闭」（上：原版，下：关闭后）">
+<img src="docs/images/monet-portrait-off.jpg" width="480" alt="莫奈：头像来源「关闭」（上：原版布局，下：镜像布局）">
 
 **回环：显示翻译（上：关，下：开）**
 
